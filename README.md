@@ -17,5 +17,7 @@ can find the optimal parameters a, but since the matrix X itself a square matrix
 it is not directly invertible, so we use Least squares estimation to find the
 optimal parameters
 * `a_LS = np.linalg.inv(X@X.T)@X.T@y` or `a_LS = np.linalg.pinv(X)@y`
+* However, in order for LS estimate to unique, X must have full column rank (rows must be linearly independent)
+
 
 
