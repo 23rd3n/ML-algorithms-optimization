@@ -1,5 +1,5 @@
 ## The python codes that I've written during the course period of Machine Learning and Optimization course
-### 1-) [Linear Regression and Least Squares](./least\squares)
+### 1-) [Linear Regression and Least Squares](./1-LinearRegression)
 ***
 **1.a Linear Fit to one-dimensional data** 
 * Cost function is selected as MSE (Mean Squared Error) as it can be easily
@@ -18,6 +18,9 @@ it is not directly invertible, so we use Least squares estimation to find the
 optimal parameters
 * `a_LS = np.linalg.inv(X@X.T)@X.T@y` or `a_LS = np.linalg.pinv(X)@y`
 * However, in order for LS estimate to unique, X must have full column rank (rows must be linearly independent)
+***
 
+### 2-) [Fitting a wrong model and analyzing the prediction error](./2-PredictionError)
+***
 
 
