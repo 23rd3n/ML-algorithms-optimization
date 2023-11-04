@@ -27,4 +27,12 @@ optimal parameters
 * However, in problem 6, polynomial fit cannot represent the exponential function; thus, we have an irreducible error (bias term), therefore prediction error decreases with increasing D value, in contrast to problem 5. However, when we increase D, overfitting to noise starts therefore, there is a trade-off between bias and variance terms.
 
 * The variance (overfitting) will decrease with increasing n, therefore at some point bias will be the only error term.
+***
+### 3-) [Ridge Regression analysis and 5-fold cross validation for baseball](./3-RidgeRegCrossVal)
 
+* Importance of normalization is investigated, having large scales reduces the scales of the weigths, that doesn't change the solution. However, when the regularization is also included then there will be a bias towards larger weigths. Therefore normalize the features before working with them so that all features will be behaved equally.
+* Thus, we included the bias term in feature matrix, but not on the coefficents. So that, we account for the bias term but we don't change the optimization proecudre for the bias term.
+* After, we obtained a closed-form solution for Ridge-regression, given that feature matrix has full column rank, n>>d, it is unique, we plotted the effect of lamda on the  norm of coefficients. As the lamda increases, due to min-opitmization, norm of the coefficients decreases because they are punished more.
+* We verified, for lamda = 0, ridge=least squares; and for lamda=inf, ridge = 0. Because having infinite lamda means that any norm on the coefficients will make the optimization impossible therefore for a feasible solution coefficeints must be zero.
+* Then, after closed form solution, we used 5-fold cross validation to find the best lamda (a similar approach to fine-tuning)
+* After we find the best lamda value, we used that lamda to calculate the best ridge estimate and linked them with the actual baseball data to interpret them what those coefficients mean.
