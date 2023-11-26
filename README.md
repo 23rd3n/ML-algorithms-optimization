@@ -1,5 +1,5 @@
 ## The Python codes that I've written during the course period of Machine Learning and Optimization course
-### 1-) [Linear Regression and Least Squares](./1-LinearRegression)
+### 1-) [Linear Regression and Least Squares](./1-LinearRegression/hw1_coding.ipynb)
 ***
 **1.a Linear Fit to one-dimensional data** 
 * Cost function is selected as MSE (Mean Squared Error) as it can be easily
@@ -20,7 +20,7 @@ optimal parameters
 * However, in order for the LS estimate to be unique, X must have full column rank (rows must be linearly independent)
 ***
 
-### 2-) [Fitting a wrong model and analyzing the prediction error](./2-PredictionError)
+### 2-) [Fitting a wrong model and analyzing the prediction error](./2-PredictionError/hw2_coding.ipynb)
 ***
 * In linear regression, when we fit polynomials, polynomial functions can represent linear models, therefore we don't have a bias error. Thus as we solved in question 4, the prediction error is only the part coming from the noise vector. The prediction error scales linearly with D and this can be seen on the plot of part 5, as D increases, the prediction error also increases for the same number of observations.
 
@@ -28,7 +28,7 @@ optimal parameters
 
 * The variance (overfitting) will decrease with increasing n, therefore at some point bias will be the only error term.
 ***
-### 3-) [Ridge Regression analysis and 5-fold cross validation for baseball](./3-RidgeRegCrossVal)
+### 3-) [Ridge Regression analysis and 5-fold cross validation for baseball](./3-RidgeRegCrossVal/hw3_me.ipynb)
 
 * Importance of normalization is investigated, having large scales reduces the scales of the weigths, that doesn't change the solution. However, when the regularization is also included then there will be a bias towards larger weigths. Therefore normalize the features before working with them so that all features will be behaved equally.
 * Thus, we included the bias term in feature matrix, but not on the coefficents. So that, we account for the bias term but we don't change the optimization proecudre for the bias term.
@@ -36,3 +36,21 @@ optimal parameters
 * We verified, for lamda = 0, ridge=least squares; and for lamda=inf, ridge = 0. Because having infinite lamda means that any norm on the coefficients will make the optimization impossible therefore for a feasible solution coefficeints must be zero.
 * Then, after closed form solution, we used 5-fold cross validation to find the best lamda (a similar approach to fine-tuning)
 * After we find the best lamda value, we used that lamda to calculate the best ridge estimate and linked them with the actual baseball data to interpret them what those coefficients mean.
+
+### 4-)[Gradient Descent Analysis for diffferent step sizes and loss functions](./4-GradientDescentAnalysis/hw4.ipynb)
+
+* For norm function, constant step-size cannot converge to minima but instead oscillate at some level. However, for squared-norm, which is the most popular loss function can converge to 1% after 20 many iterations with a constant step size of 1.
+
+* If we use a exponentially decreasing step function, then both norms cannot reach to minima since the step sizes will be too small after some iterations.
+
+* However, if we use linearly decreasing step function then both norms reach the solution but they converge at different rates, this rate is also dependent upon the gradient at the actual step. The graphs can be analised inside the python notebook.
+
+### 6-) [Anaylsis of Stochastic and Batch Gradient Method](./6-StochasticGradientMethod/hw6_v2.ipynb)
+
+* For some functions, which are convex but non-differantiable, the gradient methods cannot be exploited. However, this is not stopping us from using the sub-gradients which are equal to the gradient of the function if the function are differantiable. In this notebook, we use subgradients for hinge loss L(theta,x) = sum(max(0, 1,-xi* yi * theta)). Hinge loss is not differantiable, however, it has subgradients.
+
+* Hinge loss corresponds to soft-margin support vector machines.
+
+* If we have huge train set size, then computing the gradient of the loss function at every step is somewhere around O(n), which can be quite huge since we have to wait to make a step at each epoch. However if we use stochastic gradient method, which uses the unbiased estimator of the gradient function itself. We make a step at each data point, and it is widely known that, these steps will move us closer to minimum on average. That means, we can go away from the minima at some steps. However, instead of having O(n) at each step we have approximately O(1).
+
+* In the case of subgradients, SGM converges faster than GD.
