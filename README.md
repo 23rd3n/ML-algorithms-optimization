@@ -54,3 +54,9 @@ optimal parameters
 * If we have huge train set size, then computing the gradient of the loss function at every step is somewhere around O(n), which can be quite huge since we have to wait to make a step at each epoch. However if we use stochastic gradient method, which uses the unbiased estimator of the gradient function itself. We make a step at each data point, and it is widely known that, these steps will move us closer to minimum on average. That means, we can go away from the minima at some steps. However, instead of having O(n) at each step we have approximately O(1).
 
 * In the case of subgradients, SGM converges faster than GD.
+
+### 7-) [Anaylsis of Algorithmic Regularization(Early-stopping)](./8-EarlyStopping/logistic_regression_with_early_stopping.ipynb)
+
+* As it can be seen from the plots, in the less-parametrized regime, we observe overfitting much more, it reduces the test accuracy therefore we should apply algorithmic regularization (early-stopping) so that we don't overfit. In the over-parametrized regime, we get higher test accuracy and less overfitting for the same number of epochs. This is because when the number of parameters are much higher than the size of the dataset, our model is less-sensitive the changes in the data.
+
+* If we have more parameters than the size of the data-set, the model performs better.
