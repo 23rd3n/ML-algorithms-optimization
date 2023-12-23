@@ -38,15 +38,15 @@ optimal parameters
 * After we find the best lamda value, we used that lamda to calculate the best ridge estimate and linked them with the actual baseball data to interpret them what those coefficients mean.
 
 ### 4-)[Gradient Descent Analysis for diffferent step sizes and loss functions](./4-GradientDescentAnalysis/hw4.ipynb)
-
+***
 * For norm function, constant step-size cannot converge to minima but instead oscillate at some level. However, for squared-norm, which is the most popular loss function can converge to 1% after 20 many iterations with a constant step size of 1.
 
 * If we use a exponentially decreasing step function, then both norms cannot reach to minima since the step sizes will be too small after some iterations.
 
 * However, if we use linearly decreasing step function then both norms reach the solution but they converge at different rates, this rate is also dependent upon the gradient at the actual step. The graphs can be analised inside the python notebook.
-
+***
 ### 6-) [Anaylsis of Stochastic and Batch Gradient Method](./6-StochasticGradientMethod/hw6_v2.ipynb)
-
+***
 * For some functions, which are convex but non-differantiable, the gradient methods cannot be exploited. However, this is not stopping us from using the sub-gradients which are equal to the gradient of the function if the function are differantiable. In this notebook, we use subgradients for hinge loss L(theta,x) = sum(max(0, 1,-xi* yi * theta)). Hinge loss is not differantiable, however, it has subgradients.
 
 * Hinge loss corresponds to soft-margin support vector machines.
@@ -54,9 +54,16 @@ optimal parameters
 * If we have huge train set size, then computing the gradient of the loss function at every step is somewhere around O(n), which can be quite huge since we have to wait to make a step at each epoch. However if we use stochastic gradient method, which uses the unbiased estimator of the gradient function itself. We make a step at each data point, and it is widely known that, these steps will move us closer to minimum on average. That means, we can go away from the minima at some steps. However, instead of having O(n) at each step we have approximately O(1).
 
 * In the case of subgradients, SGM converges faster than GD.
-
+***
 ### 7-) [Anaylsis of Algorithmic Regularization(Early-stopping)](./8-EarlyStopping/logistic_regression_with_early_stopping.ipynb)
-
+***
 * As it can be seen from the plots, in the less-parametrized regime, we observe overfitting much more, it reduces the test accuracy therefore we should apply algorithmic regularization (early-stopping) so that we don't overfit. In the over-parametrized regime, we get higher test accuracy and less overfitting for the same number of epochs. This is because when the number of parameters are much higher than the size of the dataset, our model is less-sensitive the changes in the data.
 
 * If we have more parameters than the size of the data-set, the model performs better.
+***
+### 10-) [Fully Connected Multi Layer Perceptron](./10-FullyConnectedNN/neural_networks_pytorch.ipynb)
+***
+* I've used CIFAR-10 dataset with 3000 training and 1000 test sample to classify cat, dog and ship. Here images have a dimension of 4x3x32x32, indicating we used batch_size of 4 and rgb images with 32x32 resolution. In our simple neural network architecture we have only one hidden layer with flattened input vector and output layer who outputs the logits of the classes. Then we use cross-entropy loss to calculate the values of the classes. Then the maximum value is the predicted class.
+
+* We observe that ship has the best classification accuracy since it is more easy to distinguish from cats and dogs since it has very different structure than the cats and dogs who have very similar features (tail, ears, eyes etc.)
+****
