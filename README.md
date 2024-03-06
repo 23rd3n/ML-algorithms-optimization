@@ -66,4 +66,18 @@ optimal parameters
 * I've used CIFAR-10 dataset with 3000 training and 1000 test sample to classify cat, dog and ship. Here images have a dimension of 4x3x32x32, indicating we used batch_size of 4 and rgb images with 32x32 resolution. In our simple neural network architecture we have only one hidden layer with flattened input vector and output layer who outputs the logits of the classes. Then we use cross-entropy loss to calculate the values of the classes. Then the maximum value is the predicted class.
 
 * We observe that ship has the best classification accuracy since it is more easy to distinguish from cats and dogs since it has very different structure than the cats and dogs who have very similar features (tail, ears, eyes etc.)
+
+### 11-) [Convolutional Neural Networks](./11-ConvolutionalNeuralNetworks/cnn.ipynb)
+In the previous homework we obtained the following results:
+-   Overall Test Accuracy: 0.6790
+-   Test Accuracy for cat: 0.6220
+-   Test Accuracy for dog: 0.5123
+-   Test Accuracy for ship: 0.8879
+-   The classifier performs best on the class "ship"
+
+And here, with CNN, we obtain an overall test accuracy of 0.6416, which is very comparable to FCNN. This might suggest an upperbound on the performance since we are getting the same performance with two different architectures.
+
+* As we can see, when we apply shuffling operation, it reduces the accuracy drastically. The explanation for that phennomena is because shuffling the pixels disrupts spatial information in the images, making it challenging for models to learn meaningful patterns. For CNNs, which inherently leverage spatial hierarchies, shuffling can significantly degrade performance.
+
+* When we shuffle the pixels on the previous homework's code, we see that it is still in the order of 0.65 does not affect the accuracy since all of the pixels are connected and FCNN does not make any use of spatial information, it is basically the same thing for FCNN.
 ****
