@@ -61,13 +61,13 @@ optimal parameters
 
 * If we have more parameters than the size of the data-set, the model performs better.
 
-### 10-) [Fully Connected Multi Layer Perceptron](./10-FullyConnectedNN/neural_networks_pytorch.ipynb)
+### 8-) [Fully Connected Multi Layer Perceptron](./10-FullyConnectedNN/neural_networks_pytorch.ipynb)
 ***
 * I've used CIFAR-10 dataset with 3000 training and 1000 test sample to classify cat, dog and ship. Here images have a dimension of 4x3x32x32, indicating we used batch_size of 4 and rgb images with 32x32 resolution. In our simple neural network architecture we have only one hidden layer with flattened input vector and output layer who outputs the logits of the classes. Then we use cross-entropy loss to calculate the values of the classes. Then the maximum value is the predicted class.
 
 * We observe that ship has the best classification accuracy since it is more easy to distinguish from cats and dogs since it has very different structure than the cats and dogs who have very similar features (tail, ears, eyes etc.)
 
-### 11-) [Convolutional Neural Networks](./11-ConvolutionalNeuralNetworks/cnn.ipynb)
+### 9-) [Convolutional Neural Networks](./11-ConvolutionalNeuralNetworks/cnn.ipynb)
 In the previous homework we obtained the following results:
 -   Overall Test Accuracy: 0.6790
 -   Test Accuracy for cat: 0.6220
