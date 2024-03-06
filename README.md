@@ -55,8 +55,8 @@ optimal parameters
 
 * In the case of subgradients, SGM converges faster than GD.
 
-### 8-) [Anaylsis of Algorithmic Regularization(Early-stopping)](./8-EarlyStopping/logistic_regression_with_early_stopping.ipynb)
-
+### 7-) [Anaylsis of Algorithmic Regularization(Early-stopping)](./8-EarlyStopping/logistic_regression_with_early_stopping.ipynb)
+***
 * As it can be seen from the plots, in the less-parametrized regime, we observe overfitting much more, it reduces the test accuracy therefore we should apply algorithmic regularization (early-stopping) so that we don't overfit. In the over-parametrized regime, we get higher test accuracy and less overfitting for the same number of epochs. This is because when the number of parameters are much higher than the size of the dataset, our model is less-sensitive the changes in the data.
 
 * If we have more parameters than the size of the data-set, the model performs better.
